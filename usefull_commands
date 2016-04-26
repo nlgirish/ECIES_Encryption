@@ -1,0 +1,19 @@
+-----------------------------------------
+To install openssl dev package on UBUNTU:
+-----------------------------------------
+sudo apt-get install libssl-dev
+
+------------------------------------------------------
+Generate an EC Private Key:
+------------------------------------------------------
+openssl ecparam -genkey -out eckey.pem -name secp256k1
+
+------------------------------------------------------
+Generate a Certificate:
+------------------------------------------------------
+openssl req -x509 -new -key eckey.pem -out cert.pem
+
+----------------------------------------
+Check contents of an Openssl Certificate:
+----------------------------------------
+openssl x509 -in cert.pem -text -noout
